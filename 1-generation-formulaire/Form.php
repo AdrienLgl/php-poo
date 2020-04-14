@@ -1,6 +1,6 @@
 <?php
 class Formulaire{
-    public $lastname;
+    public $fields = [];
     public $firstname;
     public $method;
     public $action;
@@ -13,12 +13,8 @@ class Formulaire{
     }
     public function addTextField($field, $value)
     {
-        if ($field == 'lastname')
-        {
-            $this->lastname = '<input type=\'text\' name="'."$field".'"'.'value="'."$value".'">';
-        }
-        if ($field == 'firstname')
-            $this->firstname = '<input type=\'text\' name="'."$field".'"'.'value="'."$value".'">';
+         $this->fields[] = '<input type=\'text\' name="'."$field".'"'.'value="'."$value".'">';
+        
 
     }
     public function addSubmitButton($text)
